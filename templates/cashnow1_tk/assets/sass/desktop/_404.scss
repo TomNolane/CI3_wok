@@ -1,0 +1,20 @@
+.ex-404{
+  padding-top: 94px;
+  padding-bottom: 60px;
+  background-color: #f0f3f6;
+  @media (max-width: 767px) {
+    padding-top: 40px;
+  }
+  .ex-oops-img {
+    height: 524px;
+    width: 100%;
+    background-image: url("../img/oops.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 46%;
+    margin-bottom: 50px;
+    @media (max-width: 991px) {
+      height: 300px;
+    }
+  }
+}

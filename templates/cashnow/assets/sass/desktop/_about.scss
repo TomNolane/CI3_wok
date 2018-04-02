@@ -1,0 +1,52 @@
+.ex-about {
+  padding-bottom: 60px;
+  .ex-for-about-bg {
+    height: 300px;
+    background-image: url("../img/aboutbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    //@media (max-width: 1199px) {
+    //  display: none;
+    //}
+  }
+  h1 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    @media (max-width: 991px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.11px;
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+  p {
+    color: #2e3035;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.11px;
+    &:first-child {
+      margin-top: 38px;
+    }
+  }
+  .ex-main-btn {
+    margin-top: 60px;
+  }
+}

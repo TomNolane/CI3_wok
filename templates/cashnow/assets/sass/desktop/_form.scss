@@ -1,0 +1,169 @@
+main.ex-form {
+  padding-top: 48px;
+  padding-bottom: 60px;
+  h1 {
+    text-align: center;
+    color: #232323;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-bottom: 60px;
+    @media (max-width: 767px) {
+      font-size: 20px;
+      margin-top: 30px;
+      line-height: 24px;
+    }
+  }
+  .ex-bg-form {
+    padding-top: 66px;
+    padding-bottom: 60px;
+    border: 1px solid rgba(155, 155, 155, 0.3);
+    background-color: #f5f7fa;
+    label {
+      text-align: right;
+      color: #232323;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    .ex-wrapper {
+      position: relative;
+      &.ex-success {
+        &:after {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 9px;
+          right: 22px;
+          top: 22px;
+          background-image: url(../img/icons/icon-check.png);
+          background-repeat: no-repeat;
+        }
+        input {
+          padding-right: 40px;
+          background-color: rgba(61, 112, 178, 0.1);
+          @media (max-width: 414px) {
+            font-size: 14px;
+            @include placeholder {
+              color: #c0c0c0;
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      &.ex-error {
+        &:after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 9px;
+          right: 22px;
+          top: 22px;
+          background-image: url(../img/icons/icon-cross.png);
+          background-repeat: no-repeat;
+        }
+        input {
+          padding-right: 40px;
+          background-color: rgba(61, 112, 178, 0.1);
+          box-shadow: none;
+          @include placeholder {
+            color: #d0021b;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          @media (max-width: 414px) {
+            font-size: 14px;
+            @include placeholder {
+              color: #d0021b;
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      &.ex-arrow {
+        &:after {
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 9px;
+          right: 22px;
+          top: 22px;
+          background-image: url(../img/icons/icon-arrow.png);
+          background-repeat: no-repeat;
+        }
+      }
+      input {
+        color: #333333;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 14px 27px;
+        border: 1px solid transparent;
+        background-color: rgba(61, 112, 178, 0.1);
+        &:focus {
+          border: 1px solid transparent;
+          background-color: rgba(61, 112, 178, 0.1);
+          box-shadow: none;
+        }
+        @include placeholder {
+          color: #9b9b9b;
+          font-size: 14px;
+          font-weight: 400;
+        }
+        @media (max-width: 414px) {
+          font-size: 14px;
+          @include placeholder {
+            color: #c0c0c0;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+      select {
+        font-weight: 400;
+        box-shadow: none;
+        height: 50px;
+        color: #c0c0c0;
+        font-size: 14px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        padding: 14px 27px;
+        border: 1px solid transparent;
+        background-color: rgba(61, 112, 178, 0.1);
+        option {
+          color: #262626;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        @media (max-width: 414px) {
+          font-size: 12px;
+        }
+      }
+      input[type=number]::-webkit-inner-spin-button,
+      input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+    .ex-main-btn {
+      margin-top: 40px;
+    }
+    @media (max-width: 991px) {
+      padding: 30px 10px;
+    }
+
+  }
+}
+
+.pickmeup-twitter-bootstrap {
+  margin-top: 10px;
+  background-color: #ffffff !important;
+}
