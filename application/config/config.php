@@ -55,7 +55,7 @@ $config['mail_support'] = 'babakov-egor@mail.ru';
 $config['owner_mail']   = 'babakov-egor@mail.ru'; // Email владельца сайта
 
 // Расположение модулей
-$config['modules_locations'] = array(FCPATH.'modules/' => '../../modules/');
+$config['modules_locations'] = array(FCPATH.'modules/' => '../../modules/'); 
 
 /*
 |--------------------------------------------------------------------------

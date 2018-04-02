@@ -6,7 +6,7 @@ class Landing extends MX_Controller
 	{
 		$data = new StdClass();
 		$uri = $this->uri->segment(1); 
-		if (empty($uri)) $data->template = 'index';
+		if (empty($uri)) $data->template = 'index'; 
 		elseif ($uri == 'admin') show_404();
 		elseif ($uri == 'form')
 		{

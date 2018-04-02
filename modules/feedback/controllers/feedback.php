@@ -3,7 +3,7 @@ class Feedback extends MX_Controller
 {
 	public function index()
 	{
-		$this->load->helper('json');
+		$this->load->helper('json'); 
 		
 		$data['email'] = filter_var($this->input->post('email', true), FILTER_VALIDATE_EMAIL);
 		$data['phone'] = $this->input->post('phone', true);
