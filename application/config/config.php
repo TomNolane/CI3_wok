@@ -5,7 +5,7 @@ date_default_timezone_set('Etc/GMT-3');
 
 // Шаблон
 
-$config['template'] = 'bzaim';
+$config['template'] = 'bzaim'; 
 $config['theme'] = 'bzaim';
 
 $config['themes'] = array(
