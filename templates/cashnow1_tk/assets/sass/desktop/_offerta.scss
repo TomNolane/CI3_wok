@@ -1,0 +1,189 @@
+.ex-offerta {
+  padding-bottom: 80px;
+  h1 {
+    text-align: center;
+    color: #232323;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin-top: 20px;
+    margin-bottom: 76px;
+  }
+  .ex-offerta-head {
+    border: 1px solid #dfe3e6;
+    background-color: #f5f7fa;
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      tbody {
+        tr {
+          td {
+            padding: 14px 0;
+            color: #9b9b9b;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            &:first-child {
+              width: 190px;
+              padding-left: 18px;
+            }
+            &:last-child {
+              width: 260px;
+            }
+            &:nth-child(2) {
+              width: 160px;
+            }
+            &:nth-child(3) {
+              width: 110px;
+            }
+            &:nth-child(4) {
+              width: 110px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .ex-offerta-block {
+    @include prefix(transition, all 0.3s ease);
+    border: 1px solid #dfe3e6;
+    border-bottom: 0;
+    background-color: #ffffff;
+    height: 60px;
+    &:last-child {
+      border-bottom: 1px solid #dfe3e6;
+    }
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      tbody {
+        tr {
+          td {
+            padding: 6px 0;
+            color: #232323;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 14px;
+            &:last-child {
+              width: 260px;
+              padding-left: 40px;
+              padding-right: 20px;
+            }
+            &:first-child {
+              width: 190px;
+              padding-left: 20px;
+            }
+            &:nth-child(2) {
+              width: 160px;
+              @media (max-width: 991px) {
+                width: auto;
+              }
+            }
+            &:nth-child(3) {
+              width: 110px;
+              @media (max-width: 991px) {
+                width: auto;
+              }
+            }
+            &:nth-child(4) {
+              width: 110px;
+              @media (max-width: 991px) {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.ex-offerta-active {
+      cursor: pointer;
+      border: 1px solid #5596e6;
+      background-color: rgba(85, 150, 230, 0.1);
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+      height: auto;
+      border: 1px solid #dfe3e6;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .ex-offerta table {
+    border: 0;
+  }
+  .ex-offerta table caption {
+    font-size: 1.3em;
+  }
+  .ex-offerta table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .ex-offerta table tr {
+    display: block;
+  }
+  .ex-offerta table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  .ex-offerta table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    width: 45%;
+    font-size: 12px;
+  }
+
+  .ex-offerta table td:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  .ex-offerta table td:last-child {
+    border-bottom: 0;
+  }
+  .ex-offerta .ex-offerta-block table tbody tr td:first-child {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    div {
+      display: inline-block;
+      width: 50%;
+      img {
+        width: auto;
+      }
+    }
+  }
+  .ex-offerta .ex-offerta-block table tbody tr td {
+    padding: 20px 15px;
+  }
+  .ex-offerta .ex-offerta-block table tbody tr td:last-child {
+    width: auto;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .ex-offerta .ex-offerta-block table tbody tr td:first-child {
+    div {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
