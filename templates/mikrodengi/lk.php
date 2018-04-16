@@ -38,41 +38,62 @@ function plural_type($n) {
                 <?php 
                 
                 $arr = array(
-                    // array(
-                    // "text" => "Ваша Карта \"Совесть\" одобрена! Рассрочка 0% до 12 мес! Лимит до 300 000 руб.<br><br><br>",
-                    // "img" => "/templates/mikrodengi/assets/img/lk1.png",
-                    // "header" => "Карта \"Совесть\"",
-                    // "link" => "http://c.cpl7.ru/mybA",
-                    // "btn" => "Получить карту"
-                    // ),
-                    array(
-                        "text" =>  "Играй и выигрывай от 9856 рублей в день! Специальное предложение для Вас. 100% бонус от клуба Вулкан!<br><br>",
+					array(
+						"text" => "&nbsp;&nbsp;&nbsp;&nbsp;Внимание! Предложение ограничено. Инвестиции 11500 рублей Ваша гарантированная прибыль от 70 000 руб.! Все риски берет на себя компания.<br><br>",
+						"img" => "/templates/mikrodengi/img/img4.jpg",
+						"header" => "НАЧНИ ЗАРАБАТЫВАТЬ УЖЕ СЕГОДНЯ ОТ 70 000 РУБЛЕЙ!<br><br>",
+						"link" => "http://tracker.fffgfry.com/tracker?offer_id=866&aff_id=998&cb=0",
+						"btn" => "Узнать подробнее"
+					),
+					array(
+                       "text" => "&nbsp;&nbsp;&nbsp;&nbsp;Воспользуйся уникальным предложением! Вноси депозит от 1000 РУБ и получай БОНУСОМ +2000 РУБ на счет!<br><br><br>",
+                       "img" => "/templates/mikrodengi/img/img1.png",
+                       "header" => "Лучшие игровые автоматы здесь! Играй и выигрывай от 10 000 РУБ ежедневно!<br><br>",
+                       "link" => "https://helpjob.tk?utm_source=mikrodengi1_mikrodengi2_mikrodengi3",
+                       "btn" => "Начать выигрывать"
+                    ),
+					array(
+                        "text" =>  "&nbsp;&nbsp;&nbsp;&nbsp;Играй и выигрывай от 9856 рублей в день! Специальное предложение для Вас. 100% бонус от клуба Вулкан!<br><br><br>",
                         "img" => "/templates/mikrodengi/assets/img/lk2.jpg",
-                        "header" => "Забери свои деньги",
+                        "header" => "ЗАБЕРИ СВОИ ДЕНЬГИ<br>Каждую секунду здесь выигрывают от 582 рублей!",
                         "link" => "http://c.cpl7.ru/mA3p",
                         "btn" => "Начать выигрывать"
                     ),
                     array(
-                        "text" => "Минус 10-12 кг в месяц без строгих диет и фитнеса! Gardenin FatFlex по скидке сегодня 50% специально для Вас!<br><br>",
-                        "img" => "/templates/mikrodengi/assets/img/lk3.jpg",
-                        "header" => "\"Gardenin FatFlex\"",
-                        "link" => "http://c.twtn.ru/mzhP",
+                        "text" => "&nbsp;&nbsp;&nbsp;&nbsp;Уникальный лифтинг-стик с коллагеном от бренда Maxclinic. Разглаживает морщины на лице и шее, восстанавливает обмен и выработку коллагена, подтягивает кожу и делает ее более упругой.<br><br>",
+                        "img" => "/templates/mikrodengi/img/img2.jpg",
+                        "header" => "Революция для вашей кожи!<br>МИНУС 10 ЛЕТ ЗА 5 МИНУТ!<br>",
+                        "link" => "https://qualityby.ru/land_maxclinic-stick3/?ref=162875&lnk=1918544",
                         "btn" => "Заказать со скидкой"
                     ),
+					array(
+                       "text" => "&nbsp;&nbsp;&nbsp;&nbsp;Персональный магический амулет на богатство. Изготавливается из имперских монет, заговаривается на имя конкретного человека. Оберегает от финансовых неудач и помогает выйти на новый уровень жизни.<br><br>",
+                       "img" => "/templates/mikrodengi/img/img1.jpg",
+                       "header" => "ЗАБУДЬТЕ О НЕУДАЧАХ, ДЕНЬГИ БУДУТ ВАШИ!",
+                       "link" => "https://payshopss.ru/money-amulet5/?ref=162875&lnk=1918518",
+                       "btn" => "Заказать со скидкой"
+                    ),
                     array(
-                        "text" => "Продай свой автомобиль за считанные минуты, а главное за хорошую цену! Бонус специально для Вас! Сервис номер один в России!",
-                        "img" => "/templates/mikrodengi/assets/img/lk4.jpg",
-                        "header" => "\"СarPrice\"",
-                        "link" => "http://c.cpl7.ru/mAq2",
-                        "btn" => "Продать авто"
+                        "text" => "&nbsp;&nbsp;&nbsp;&nbsp;Миостимулятор нового поколения - худейте без диет и фитнеса. Отличается высокочастотными импульсами, бьющими точно в цель мышечных волокон и жировых клеток. Пояс можно носить под одеждой, даже когда вы на работе или в дороге!",
+                        "img" => "/templates/mikrodengi/img/img3.jpg",
+                        "header" => "ВСЕГО 23 МИНУТЫ В ДЕНЬ - И ВАШЕ ТЕЛО КАК С ОБЛОЖКИ ЖУРНАЛА!",
+                        "link" => "https://bestshopby.ru/ems-trainer20/?ref=162875&lnk=1918552",
+                        "btn" => "Заказать со скидкой"
                     )
+                    
                 );
-                
+                $r = 0;
+				echo '<div class="row">';
                 foreach($arr as $item)
-                        {
-                            // $domen = str_replace('www.','',$_SERVER['HTTP_HOST']);
-                            // $item['link'] = str_replace("#site", $domen, $item['link']); 
-                            echo '<div class="col-md-4">
+                        { 
+							$r++;
+							if($r == 4)
+							{
+								//$r2= "col-md-6";
+								echo '</div><div class="row">';
+							} 
+							
+                            echo '<div class="col-md-4" style="margin-top:30px;">
                             <div class="ex-off-block">
                                 <p class="text-center">
                                     <span class="fa fa-star"></span>
@@ -102,45 +123,9 @@ function plural_type($n) {
                                     <a href="'.$item['link'].'" target="_blank"><button class="ex-main-btn">'.$item['btn'].'</button></a> 
                                 </div>
                             </div>
-                        </div>';
-                            // echo '<div class="col-md-3">
-                            //     <div class="ex-off-block">
-                            //         <p class="text-right">
-                            //             <span class="fa fa-star"></span>
-                            //             <span class="fa fa-star"></span>
-                            //             <span class="fa fa-star"></span>
-                            //             <span class="fa fa-star"></span>
-                            //             <span class="fa fa-star"></span>
-                            //         </p>
-                            //         <figure>
-                            //             <div class="ex-img-offerta">
-                            //             <a href="'.$item['link'].'" onclick="markTarget(\'pixel_result\', \''.$item['title'].'\', \''.$pixel.'\')" target="_blank">
-                            //                 <img class="lk-img '.$item['img'].'" src="/templates/common/img/offers/'.$item['img'].'.png" alt="'.$item['title'].'">
-                            //             </a> 
-                            //             </div>
-                            //             <table>
-                            //                 <tbody>
-                            //                 <tr>
-                            //                     <td>Сумма займа</td>
-                            //                     <td>до '.number_format($item['amount'],0,'',' ').' рублей</td>
-                            //                 </tr>
-                            //                 <tr>
-                            //                     <td>Срок займа</td>
-                            //                     <td>до '.$item['period'].' '.$_plural_days[plural_type($item['period'])].'</td>
-                            //                 </tr>
-                            //                 <tr>
-                            //                     <td>Основная ставка</td>
-                            //                     <td>'.$item['percent'].'%</td>
-                            //                 </tr>
-                            //                 </tbody>
-                            //             </table>
-                            //         </figure>
-                            //         <div class="ex-offers-footer">
-                            //             <a href="'.$item['link'].'" onclick="markTarget(\'pixel_result\', \''.$item['title'].'\', \''.$pixel.'\')" target="_blank"><button class="ex-main-btn">Получить деньги</button></a> 
-                            //         </div>
-                            //     </div>
-                            // </div>';
+                        </div>'; 
                         }
+						echo '</div>';
                     ?> 
             </div>
         </div>

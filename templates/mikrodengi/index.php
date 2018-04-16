@@ -89,16 +89,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </div> 
         <div class="ex-articles">
-            <div class="container">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Микроденьги #1 -->
-                <ins class="adsbygoogle text-center" style="display:block" data-ad-client="ca-pub-9729149501728150" data-ad-slot="5300144286" data-ad-format="auto"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+            <div class="container"> 
                 <h2 class="text-center">Статьи</h2>
                 <div class="row">
                     <a href="/delay">
@@ -151,13 +144,7 @@
         <div class="row text-center">
             <div class="col-sm-12 text-center">
             </div>
-        </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Микроденьги #1 -->
-        <ins class="adsbygoogle text-center" style="display:block" data-ad-client="ca-pub-9729149501728150" data-ad-slot="5300144286" data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </div> 
         <div class="ex-about">
             <div class="container">
                 <h2 class="text-center">Отзывы о нас</h2>
