@@ -24,7 +24,7 @@
                                     <i class="money"></i>от 18 до 70 лет</li>
                             </ul>
                             <div class="ex-action">
-                                <a href="https://go.leadgid.ru/aff_c?offer_id=1625&aff_id=23263&aff_sub=bzaim5.ru&aff_sub2=moneyshare.ru" target="_blank">
+                                <a href="https://go.leadgid.ru/aff_c?offer_id=1625&aff_id=23263&aff_sub=best-money.ml&aff_sub2=moneyshare.ru" target="_blank">
                                     <button class="ex-main-btn">Получить деньги</button>
                                 </a>
                             </div>
@@ -50,7 +50,7 @@
                                     <i class="money"></i>от 18 до 70 лет</li>
                             </ul>
                             <div class="ex-action">
-                                <a href="https://go.leadgid.ru/aff_c?offer_id=3285&aff_id=23263&aff_sub=bzaim5.ru_sub2=moneyshare.ru" target="_blank">
+                                <a href="https://go.leadgid.ru/aff_c?offer_id=3285&aff_id=23263&aff_sub=best-money.ml_sub2=moneyshare.ru" target="_blank">
                                     <button class="ex-main-btn">Получить деньги</button>
                                 </a>
                             </div>
@@ -156,7 +156,7 @@
                                     <i class="money"></i>от 18 до 70 лет</li>
                             </ul>
                             <div class="ex-action">
-                                <a href="https://go.leadgid.ru/aff_c?offer_id=2179&aff_id=23263&aff_sub=bzaim5.ru&aff_sub2=moneyshare.ru" target="_blank">
+                                <a href="https://go.leadgid.ru/aff_c?offer_id=2179&aff_id=23263&aff_sub=best-money.ml&aff_sub2=moneyshare.ru" target="_blank">
                                     <button class="ex-main-btn">Получить деньги</button>
                                 </a>
                             </div>
@@ -181,7 +181,7 @@
                                     <i class="money"></i>от 18 до 70 лет</li>
                             </ul>
                             <div class="ex-action">
-                                <a href="https://go.leadgid.ru/aff_c?offer_id=2635&aff_id=23263&aff_sub=bzaim5.ru&aff_sub2=moneyshare.ru" target="_blank">
+                                <a href="https://go.leadgid.ru/aff_c?offer_id=2635&aff_id=23263&aff_sub=best-money.ml&aff_sub2=moneyshare.ru" target="_blank">
                                     <button class="ex-main-btn">Получить деньги</button>
                                 </a>
                             </div>
