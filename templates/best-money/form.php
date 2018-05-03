@@ -151,7 +151,7 @@ if(isset($_SERVER['HTTP_REFERER'])){
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="col-md-7 col-md-offset-2 col-xs-12 form-steps">
-                                                <form class="" id="anketa" action="/add" method="post"  autocomplete="off">
+                                                <form class="" id="anketa" action="/add" method="post" onsubmit="return validate();" autocomplete="off">
                                                     <input type="hidden" name="referer" value="<?=$referer?>">
                                                     <input type="hidden" name="id" value="">
                                                     <input type="hidden" name="step" value="1">

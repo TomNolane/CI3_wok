@@ -36,7 +36,7 @@ footer .menu a{font-size:10px;font-family:'Myriad Pro';font-weight:400;}
 .p{background-color:#fff;opacity:0.9;min-height:100vh;}
 .btn-circle, .btn-circle:hover{border:1px double #5cb85c;border-radius:50%;font-size:16px;}
 .btn-circle.off{border:1px double #AEAEAE;color:#AEAEAE;}
-.btn-lk{background-color:#52a013;padding:15px 20px;}
+.btn-lk{background-color:#52a013;padding:15px 10px;}
 .dadata{margin-bottom:-10px;}
 .conditions h3{font-size:16px;color:#3e3e3e;;}
 .conditions p{font-size:12px;}

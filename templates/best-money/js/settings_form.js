@@ -1,7 +1,7 @@
 $('#agree').change(function(){
     if ($('#agree:checked').val() == '1')
     {
-        $('#next').css('display','block');
+        $('#next').css('display','inline-block');
     }
         
     else

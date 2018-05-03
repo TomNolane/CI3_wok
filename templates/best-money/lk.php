@@ -1,5 +1,5 @@
 <?php
-$my_title = "Вам автоматически одобрен займ";
+$my_title = "Воспользуйтесь уникальным предложением";
 require 'header.php';
 $this->load->model('offers/offers_model', 'offers');
 $data = $this->offers->all();
@@ -30,10 +30,10 @@ $pixel = $this->pixel->stat('best-money.ml');
                 <div class="col-md-10 col-md-offset-1 col-xs-12 text-center">
                 <?php
                     if(isset($_GET['doi'])){
-                        echo '<h1 class="title" style="text-shadow: #fff 0 0 6px;"><span class="subtitle">Ваша подписка успешно активирована <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span><br/><span id="i"></span>, Вам автоматически одобрен займ в следующих организациях:</h1>';
+                        echo '<h1 class="title" style="text-shadow: #fff 0 0 6px;"><span class="subtitle">Ваша подписка успешно активирована <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span><br/><span id="i"></span>, Воспользуйтесь уникальным предложением:</h1>';
                     }
                     else{
-                        echo'<h1 class="title" style="color: #000; text-shadow: #fff 0 0 6px;">Вам автоматически одобрен займ в следующих организациях:</h1>';
+                        echo'<h1 class="title" style="color: #000; text-shadow: #fff 0 0 6px;">Воспользуйтесь уникальным предложением:</h1>';
                     }
                 ?>
                     <?php
