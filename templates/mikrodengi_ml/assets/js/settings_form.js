@@ -1,5 +1,5 @@
  
-var agree = 1;
+var agree = 0;
 $('#agree').change(function(){ 
     if (agree == 1)
     {

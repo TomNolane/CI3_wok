@@ -61,16 +61,15 @@
     <div class="ex-articles">
         <div class="container">
         <?php echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Микроденьги -->
-        <ins class="adsbygoogle text-center"
-             style="display:block"
-             data-ad-client="ca-pub-2018999784099007"
-             data-ad-slot="1587330252"
-             data-ad-format="auto"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        '; ?>
+    <!-- Микроденьги.мл -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2018999784099007"
+         data-ad-slot="9403700271"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>'; ?>
             <h2 class="text-center">Статьи</h2>
             <div class="row">
                 <a href="/delay">
@@ -122,6 +121,20 @@
                     </div>
                 </div>
                 </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Микроденьги.мл -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2018999784099007"
+                data-ad-slot="9403700271"
+                data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             </div>
         </div>
     </div>

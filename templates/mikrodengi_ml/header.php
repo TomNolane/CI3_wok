@@ -16,18 +16,18 @@ if(!isset($description))
 	<meta name="Description" content="<?php echo $description;?>" />
 	<meta name="Keywords" content="моментальный заем, займы, онлайн, деньги" />
 	<meta name="robots" content="all" />
-	<meta name="copyright" lang="ru" content="Mikrodengi.su" /> 
+	<meta name="copyright" lang="ru" content="mikrodengi.ml" /> 
 	<meta property="og:title" content="Срочные займы круглосуточно без проверок Онлайн" />
 	<meta property="og:description" content="mikrodengi - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории.Только у нас лучшие кредитные предложения!"/>
-	<meta property="og:image" content="https://mikrodengi.su/templates/mikrodengi_ml/assets/img/credit-card.png"/>
+	<meta property="og:image" content="https://mikrodengi.ml/templates/mikrodengi_ml/assets/img/credit-card.png"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="https://mikrodengi.su/" />
-	<meta name="twitter:card" content="https://mikrodengi.su/templates/mikrodengi_ml/assets/img/credit-card.png"/>
+	<meta property="og:url" content="https://mikrodengi.ml/" />
+	<meta name="twitter:card" content="https://mikrodengi.ml/templates/mikrodengi_ml/assets/img/credit-card.png"/>
 	<meta name="twitter:title" content="Срочные займы круглосуточно без проверок Онлайн"/>
 	<meta name="twitter:description" content="Mikrodengi - лучший онлайн сервис по выдаче мгновенных займов и кредитов без проверки вашей кредитной истории.Только у нас лучшие кредитные предложения!"/>
-	<meta name="twitter:image:src" content="https://mikrodengi.su/templates/mikrodengi_ml/assets/img/credit-card.png"/>
-	<meta name="twitter:url" content="https://mikrodengi.su/"/>
-	<meta name="twitter:domain" content="Mikrodengi.su"/>
+	<meta name="twitter:image:src" content="https://mikrodengi.ml/templates/mikrodengi_ml/assets/img/credit-card.png"/>
+	<meta name="twitter:url" content="https://mikrodengi.ml/"/>
+	<meta name="twitter:domain" content="mikrodengi.ml"/>
     <meta name="yandex-verification" content="0a05c88b0b9b6980" />
 
     <!-- Favicons -->

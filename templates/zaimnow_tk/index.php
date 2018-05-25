@@ -1,16 +1,208 @@
-<?php require 'header.php'; ?>
-    <form id="anketa" action="/form" method="post">
-        <input type="hidden" id="amount" name="amount" value="20000" />
-        <input type="hidden" id="period" name="period" value="21" />
-        <input type="hidden" id="form_slrd" name="form_slrd" value="15" />
-        <input type="hidden" name="referer" value="<?php if (isset($_SERVER['HTTP_REFERER'])) echo $_SERVER['HTTP_REFERER']; ?>">
-        <?php if (!empty($_REQUEST['ad_id'])) echo '<input type="hidden" name="ad_id" value="'.$_REQUEST['ad_id'].'">'; ?>
-        <div class="container">
-        <div class="ex-main-section">
+<?php require 'header.php';
+$client_id = '6488317'; // ID приложения
+$client_secret = '5fqVYjRCpEenlHbZz9qM'; // Защищённый ключ
+$redirect_uri = 'https://zaimnow.tk/callback'; // Адрес сайта
+$url = 'http://oauth.vk.com/authorize';
+
+$params = array(
+    'client_id'     => $client_id,
+    'redirect_uri'  => $redirect_uri,
+    'response_type' => 'code',
+    'display' => 'popup',
+    'scope' => 'email'
+); 
+echo'<style>
+.form-2 {
+    /* Size and position */
+    width: 340px;
+    margin: 60px auto 30px;
+    padding: 15px;
+    position: relative;
+ 
+    /* Styles */
+    background: #fffaf6;
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.2),       
+        0 1px 5px rgba(0,0,0,0.2),       
+        0 0 0 12px rgba(255,255,255,0.4);
+}
+.form-2 h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+ 
+.form-2 h1 .log-in,
+.form-2 h1 .sign-up {
+    display: inline-block;
+    text-transform: uppercase;
+}
+ 
+.form-2 h1 .log-in {
+    color: #6c6763;
+    padding-right: 2px;
+}
+ 
+.form-2 h1 .sign-up {
+    color: #ffb347;
+    padding-left: 2px;
+}.form-2 .float {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,1);
+}
+ 
+.form-2 .float:first-of-type {
+    padding-right: 5px;
+}
+ 
+.form-2 .float:last-of-type {
+    padding-left: 5px;
+}.form-2 label {
+    display: block;
+    padding: 0 0 5px 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    font-size: 11px;
+}
+ 
+.form-2 label i {
+    margin-right: 5px; /* Gap between icon and text */
+    display: inline-block;
+    width: 10px;
+}.form-2 input[type=tel],
+.form-2 input[type=password] {
+    font-family: "Lato", Calibri, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 3px solid #ebe6e2;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}.form-2 input[type=tel]:hover,
+.form-2 input[type=password]:hover {
+    border-color: #CCC;
+}
+ 
+.form-2 label:hover ~ input {
+    border-color: #CCC;
+}
+ 
+.form-2 input[type=tel]:focus,
+.form-2 input[type=password]:focus {
+    border-color: #BBB;
+    outline: none; /* Remove Chrome"s outline */
+}.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.form-2 input[type=submit],
+.form-2 .log-vk, .form-2 .log-fb {
+    /* Size and position */
+    width: 49%;
+    height: 38px;
+    float: left;
+    position: relative;
+ 
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+ 
+    /* Font styles */
+    font-family: "Lato", Calibri, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 38px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.form-2 input[type=submit] {
+    margin-left: 1%;
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+ 
+.form-2 .log-vk {
+    margin-right: 1%;
+    background: linear-gradient(#34a5cf, #2a8ac4);
+    border: 1px solid #2b8bc7;
+    color: #ffffff;
+    text-shadow: 0 -1px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+.form-2 .log-fb {
+    margin-right: 1%;
+    background: linear-gradient(#40798e, #386c8c);
+    border: 1px solid #02314e;
+    color: #ffffff;
+    text-shadow: 0 -1px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+.form-2 input[type=submit]:hover,
+.form-2 .log-twitter:hover, .form-2 .log-fb:hover {
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.3),
+        inset 0 20px 40px rgba(255,255,255,0.15);
+} 
+ 
+.form-2 input[type=submit]:active,
+.form-2 .log-vk:active{
+    top: 1px;
+} 
+.form-2 .log-fb:active{
+    top: 1px;
+}
+.no-boxshadow .form-2 input[type=submit]:hover {
+    background: #ffb347;
+}
+ 
+.no-boxshadow .form-2 .log-vk:hover {
+    background: #2a8ac4;
+}
+.no-boxshadow .form-2 .log-fb:hover {
+    background: #2a8ac4;
+}
+.form-2 p:last-of-type {
+    clear: both;   
+}
+ #my_text, #help-block3 {
+    font-size: 12px;
+ }
+ #help-block3 {
+     color: red !important;
+ }
+.form-2 .opt {
+    text-align: right;
+    margin-right: 3px;
+}</style>'; ?> 
+        <div class="container"> 
+        <div class="ex-main-section"> 
             <h1>Мгновенные онлайн займы с любой кредитной историей</h1>
             <p class="ex-text-hd">Срочные деньги без отказа. Подбор займов бесплатно!</p>
             <div class="row">
                 <div class="col-lg-6">
+                <form id="anketa" action="/form" method="post">
+                <input type="hidden" id="amount" name="amount" value="20000" />
+                <input type="hidden" id="period" name="period" value="21" />
+                <input type="hidden" id="form_slrd" name="form_slrd" value="15" />
+                <input type="hidden" name="referer" value="<?php if (isset($_SERVER['HTTP_REFERER'])) echo $_SERVER['HTTP_REFERER']; ?>">
+                <?php if (!empty($_REQUEST['ad_id'])) echo '<input type="hidden" name="ad_id" value="'.$_REQUEST['ad_id'].'">'; ?>
                     <div class="row justify-content-md-end">
                         <div class="col-lg-10 ">
                             <div class="ex-calc-block">
@@ -55,18 +247,38 @@
                                     <div class="col-md-7">
                                         <div class="ex-action">
                                             <button type="submit" class="ex-main-btn">Получить деньги</button>
-                                        </div>
-                                    </div>
+                                        </div> 
+                                    </div> 
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> 
+                    </form>
                 </div>
                 <div class="col-lg-6 ">
-                    <div class="ex-for-img d-none d-lg-block">
+               
+                    <div class="ex-for-img d-none d-lg-block"> 
+                    <?php echo '<form class="form-2">
+<h1><span class="log-in">Получи займ</span> <span class="sign-up"> в один клик:</span></h1>
+<p class="float">
+    <label for="login"><i class="icon-user"></i>Номер телефона</label>
+    <input type="tel" class="form-control ec tip special_form" name="phone" id="phone" placeholder="8 (9__) ___ ____"
+    title="Введите свой номер телефона" data-validation-error-msg="Введите номер телефона" required><span id="help-block3"></span>
+</p>
+<p id="my_text">1) Введите Ваш номер телефона<br>2) Ввойдите через Вконтакте или Фейсбук<br>3) Получите займ!</p>
+<p class="clearfix"> 
+    <a href="' . $url . '?' . urldecode(http_build_query($params)) . '" class="log-vk">Вконтакте <i class="fa fa-vk" aria-hidden="true"></i></a>    
+    <a href="" class="log-fb">Фейсбук <i class="fa fa-facebook" aria-hidden="true"></i></a> 
+</p>
+</form> ';?>
                     </div>
+                    
                 </div>
+            </div>
+           
+            <div class="col-lg-12 ">
+            
+            
             </div>
         </div>
     </div>
@@ -313,6 +525,11 @@
         </div>
     </div>
 </main>
-</form>
-</main>
+<?php
+$client_id = '578516362116657'; // Client ID
+$client_secret = 'eb1814bd3980ab9a306dc35073021fb3'; // Client secret
+$redirect_uri = 'https://zaimnow.tk/callback'; // Redirect URIs
+
+
+?>  
 <?php require 'footer.php'; ?>

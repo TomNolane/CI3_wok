@@ -1,7 +1,7 @@
 <?php 
 if(!isset($my_title))
 {
-	$my_title = 'Подача Заявки на Получение Займа Онлайн | Сервис Mikrodengi.su';
+	$my_title = 'Подача Заявки на Получение Займа Онлайн | Сервис mikrodengi.ml';
 	$description = 'Хотите получить денежный заем в сжатые сроки?Тогда заполните несложную форму заявка на нашем онлайн-сервисе по выдаче денежных займов в России';
 }  
 require 'header.php'; 
@@ -64,8 +64,8 @@ if(isset($_SERVER['HTTP_REFERER'])){
 }
 ?>
 <main class="ex-form">
-    <h1 class="text-center" id="form-steps">До одобрения кредита вас отделяют всего 3 шага</h1>
-    <p>для оформления потребуется паспорт</p>
+    <h1 class="text-center" id="form-steps">До одобрения вас отделяет всего 1 шаг</h1>
+    <p></p>
     <div class="container">
     <form id="anketa" action="/lk" method="post" class="form-horizontal" onsubmit="return validate();" autocomplete="off">
                 <input type="hidden" name="display" id="display" value="0">
@@ -77,7 +77,7 @@ if(isset($_SERVER['HTTP_REFERER'])){
                 <input type="hidden" id="period" name="period" value="<?php if(isset($period)) { echo $period; } else echo empty($_POST['period'])? 21 : $_POST['period']; ?>"/>
             <div class="tab-content">
                 <ul class="ex-tab-steps">
-                    <li class="ex-step-counter ex-step-active">Заполните личные данные</li>
+                    <li class="ex-step-counter ex-step-active"></li>
                     <li class="ex-step-counter ex-step-2" style="visibility:  hidden;">Заполните паспортные данные</li>
                     <li class="ex-step-counter ex-step-3" style="visibility:  hidden;">Заполните данные о работе</li>
                 </ul>

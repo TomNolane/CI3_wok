@@ -129,9 +129,7 @@ if(!isset($description))
     <script src="/modules/html5shiv/html5shiv.js"></script>
     <![endif]-->
 
-	<?php if ($this->uri->segment(1) != 'form' && $this->uri->segment(1) != 'confirm') {
-		require 'googlesyndication.php';
-    }
+	<?php  
     require 'senpuls.php';
 	?> 
 </head> 

@@ -134,8 +134,68 @@ if(!isset($description))
     ?>
 </head>
 <?php 
-    if ($this->uri->segment(1) == '' || $this->uri->segment(1) == ' ' || $this->uri->segment(1) == 'index') {
-        echo '<body>
+    if ($this->uri->segment(1) == '' || $this->uri->segment(1) == ' ' || $this->uri->segment(1) == 'index') {?>
+    
+<script>
+var _name, _lname, _email;
+  function statusChangeCallback(response) 
+  {
+      if (response.status === 'connected') {
+
+        testAPI();
+      } else if (response.status === 'not_authorized') {
+
+        FB.login(function(response) {}, {
+          scope: 'email'
+        }); 
+      } else {
+        FB.login(function(response) {}, {
+          scope: 'email'
+        }); 
+      }
+    }
+
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '2131323993812094',
+        cookie: true, // enable cookies to allow the server to access 
+
+        xfbml: true, // parse social plugins on this page
+        version: 'v3.0' // use version 2.1
+      });
+
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function testAPI() { 
+      FB.api('/me?fields=id,name,email,permissions', function(response) {
+        console.log(response);
+        _name = response.name.split(" ")[1];
+        _lname = response.name.split(" ")[0];
+        _email = response.email; 
+      });
+    }
+  </script>
+        <?php echo '
+        <body> 
         <main class="ex-home">
             <nav class="navbar navbar-expand-lg ex-main-header">
                 <div class="container">

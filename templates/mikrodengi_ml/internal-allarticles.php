@@ -1,6 +1,20 @@
 <?php require 'header.php';?>
 <section class="ex-article-all">
 <div class="container">
+<div class="row">
+            <div class="col-md-12">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Микроденьги.мл -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2018999784099007"
+                data-ad-slot="9403700271"
+                data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+        </div>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="ex-art-block">

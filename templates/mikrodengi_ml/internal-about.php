@@ -2,6 +2,20 @@
 <main class="ex-about">
     <div class="container">
         <div class="ex-about-content">
+        <div class="row">
+            <div class="col-md-12">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Микроденьги.мл -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-2018999784099007"
+                data-ad-slot="9403700271"
+                data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            </div>
+        </div>
             <h1 class="text-center">О сервисе Mikrodengi</h1>
             <p>
                 Неожиданная ситуация может выбить из колеи, вызвать беспомощность и разочарование.<br>

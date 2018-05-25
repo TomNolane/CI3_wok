@@ -2,7 +2,20 @@
     if($this->uri->segment(1) == '' || $this->uri->segment(1) == ' ' || $this->uri->segment(1) == 'index' || $this->uri->segment(1) == 'allarticles')
     {
         echo '<a href="#0" class="cd-top">Наверх</a>';
-    }  
+    }
+    
+    if($this->uri->segment(1) != 'lk'){
+        echo '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Микроденьги.мл -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2018999784099007"
+            data-ad-slot="9403700271"
+            data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>';
+    }
 ?>
 
 <footer class="ex-main-footer">
@@ -14,17 +27,7 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <p>Сервис по подбору выгодных онлайн займов и кредитов находящийся по адресу:<br>
-                    Россия, Ленинградская обл. г. Санкт-Петербург, ул. Осипенко, 12, оф 201<span> support@mikrodengi.su | 8
-                    (960) 950 93 53 <br>
-                    Займы предоставляются на сумму от 1 000 до 100 000 рублей включительно на срок от 61 до 365
-                    дней.<br>
-                    Максимальная процентная ставка по займу составляет 0,98% в день, а минимальная 0,08%.<br>
-                    Пример расчета общей стоимости займа: заём 20 000 руб. срок пользования 10 недель под 0,08% в день;
-                    проценты за весь период составят<br>
-                    11 200 руб. Итого к выплате 31 200 рублей. Первый заём до 10 000 рублей выдается по ставке 0% в
-                    случае своевременного погашения<br>
-                    ООО «Альянс» | ОГРН 5177746353054 | ИНН 9705113909 | КПП 770501001</span></p>
+                <p>Сервис по подбору выгодных онлайн займов и кредитов</p>
             </div>
         </div>
     </div>
@@ -111,7 +114,7 @@
             grid: false,
             from_fixed: true,
             from: 1,
-            values: [61, 130, 200, 250]
+            values: [5, 10, 20, 50, 120]
         });
    
         var slider5 = $('#rangeSlider2').data('ionRangeSlider');
@@ -165,7 +168,7 @@
         onChange: function (range) {
             if (range.from_value <= 10000) {
             $('#period').val('7');
-            $('#period2').val('От 61 до 130 дней');
+            $('#period2').val('От 5 до 130 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
                 from: 0
@@ -173,7 +176,7 @@
             <?php } ?> 
         } else if (range.from_value <= 15000) {
             $('#period').val('14');
-            $('#period2').val('От 61 до 130 дней');
+            $('#period2').val('От 5 до 130 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
                 from: 0
@@ -181,7 +184,7 @@
             <?php } ?> 
         } else if (range.from_value <= 20000) {
             $('#period').val('21');
-            $('#period2').val('От 61 до 130 дней');
+            $('#period2').val('От 5 до 130 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
                 from: 1
@@ -189,10 +192,10 @@
              <?php } ?> 
         } else if (range.from_value <= 30000) {
             $('#period').val('21');
-            $('#period2').val('От 61 до 130 дней');
+            $('#period2').val('От 5 до 130 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
-                from: 1
+                from: 2
             });
              <?php } ?> 
         } else if (range.from_value <= 50000) {
@@ -200,7 +203,7 @@
             $('#period2').val('От 130 до 250 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
-                from: 2
+                from: 3
             });
              <?php } ?> 
         } else {
@@ -208,7 +211,7 @@
             $('#period2').val('От 250 до 365 дней');
             <?php if($this->uri->segment(1) != 'form'){ ?>
             slider5.update({
-                from: 3
+                from: 4
             });
              <?php } ?> 
         } 
@@ -485,25 +488,6 @@
 });</script>
 <?php } elseif($this->uri->segment(1) == 'lk' || $this->uri->segment(1) == 'lk2' || $this->uri->segment(1) == 'lk3')
 {  
-    echo '<!-- Google Code for  
-    &#1050;&#1086;&#1085;&#1074;&#1077;&#1088;&#1089;&#1080;&#1103; Conversion  
-    Page -->
-    <script >
-    /* <![CDATA[ */
-    var google_conversion_id = 820672461;
-    var google_conversion_label = "mo6fCJOfuHsQze-phwM";
-    var google_remarketing_only = false;
-    /* ]]> */
-    </script>
-    <script   
-    src="//www.googleadservices.com/pagead/conversion.js">
-    </script>
-    <noscript>
-    <div style="display:inline;">
-    <img height="1" width="1" style="border-style:none;" alt=""  
-    src="//www.googleadservices.com/pagead/conversion/820672461/?label=mo6fCJOfuHsQze-phwM&amp;guid=ON&amp;script=0"/>
-    </div>
-    </noscript>';
     echo '<script> 
     var offers = '.json_encode($data).'
     var by_reg = null;
@@ -804,4 +788,32 @@ function traffic(site, page)
     });
 }
 </script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter48906734 = new Ya.Metrika({
+                    id:48906734,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/48906734" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body></html>

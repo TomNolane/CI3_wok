@@ -133,8 +133,8 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-4 ex-agreement-check">
                     <label class="checkbox-inline">
-                        <span> Я согласен на <a href="https://mikrodengi.su/soglasie" target="_blank">обработку персональных данных</a> и с <a href="https://mikrodengi.su/oferta" target="_blank">публичной офертой</a></span>
-                        <input type="checkbox" id="agree" value="0" >
+                        <span> Я согласен на <a href="https://mikrodengi.ml/soglasie" target="_blank">обработку персональных данных</a> и с <a href="https://mikrodengi.ml/oferta" target="_blank">публичной офертой</a></span>
+                        <input type="checkbox" id="agree" value="0" checked>
                         <i></i>
                     </label>
                     <label class="hidden">
@@ -145,7 +145,7 @@
             </div>
             <div class="form-group has-feedback">
                 <div class="col-md-8 col-md-offset-4">
-                    <a id="submitOne" class="ex-main-btn btn3 text-center">Получить деньги</a>
+                    <a id="submitOne" class="ex-main-btn btn2 text-center">Получить деньги</a>
                 </div>
             </div>
         </div>

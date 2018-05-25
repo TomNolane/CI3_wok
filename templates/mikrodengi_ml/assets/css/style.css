@@ -13750,7 +13750,7 @@ main.ex-money .ex-money-block p {
 
 /* line 1, ../sass/desktop/_offerta.scss */
 main.ex-offerta {
-  padding-top: 46px;
+  padding-top: 0;
 }
 /* line 3, ../sass/desktop/_offerta.scss */
 main.ex-offerta h1 {
@@ -13767,7 +13767,7 @@ main.ex-offerta h1 {
 }
 /* line 12, ../sass/desktop/_offerta.scss */
 main.ex-offerta .ex-offers-content {
-  padding-top: 50px;
+  padding-top: 0;
   padding-bottom: 60px;
 }
 div.ex-off-block {
@@ -14014,4 +14014,7 @@ main.ex-offerta .ex-offers-content .ex-off-block .ex-main-btn {
 /* line 34, ../sass/desktop/_article.scss */
 .ex-article .ex-article-bg p:last-of-type {
   margin-bottom: 0;
+}
+.adsbygoogle {
+  text-align: center !important;
 }

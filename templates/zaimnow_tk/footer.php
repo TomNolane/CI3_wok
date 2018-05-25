@@ -1,4 +1,5 @@
-<?php $from = '15';
+<?php $from = '15';  
+
     if($this->uri->segment(1) == '' || $this->uri->segment(1) == ' ' || $this->uri->segment(1) == 'index' || $this->uri->segment(1) == 'faq')
     {
         echo '<a href="#0" class="cd-top">Наверх</a>';
@@ -35,8 +36,7 @@
         <p> Сервис по подбору выгодных онлайн займов<br>
 Займы предоставляются на сумму от 1 000 до 100 000 рублей включительно на срок от 61 до 365 дней. Максимальная процентная ставка по займу составляет 0,98% в день, а минимальная 0,08%. Пример расчета общей стоимости займа: заём 20 000 руб. срок пользования 10 недель под 0,08% в день; проценты за весь период составят 11 200 руб. Итого к выплате 31 200 рублей.<br>
 Первый заём до 10 000 рублей выдается по ставке 0% в случае своевременного погашения.
-        </p>
-    </div>
+        </p> 
 </footer>
 
     <?php
@@ -625,6 +625,48 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=154258735257906&ev=PageView
 &noscript=1"/>
 </noscript>
-<!-- End Facebook Pixel Code -->
+<!-- End Facebook Pixel Code --> 
+<script type="text/javascript">     
+try{
+    var _hr = $(".log-vk").attr("href");
+    $(".log-vk").click(function(event ){ 
+        var d = $("#phone").val().replace(/\s+/g, '');
+        if(d.length != 13 )
+        {
+            event.preventDefault();
+            $("#help-block3").text("Ошибка! Введите правильный номер")
+        } 
+        else
+            $(".log-vk").attr("href", _hr + "&state=" + d + "_" + "source=vk" + "_" +$("#amount").val() );
+    });
+
+
+     
+    $(".log-fb").click(function(event ){ 
+        event.preventDefault(); 
+        $('.log-fb').prop('disabled', false);
+        var timerId = setInterval(function() {
+            var d2 = $("#phone").val().replace(/\s+/g, '');
+            if(d2.length != 13 )
+            { 
+                $("#help-block3").text("Ошибка! Введите правильный номер");
+                clearInterval(timerId);
+            }else if(!isBlank(_email) && !isBlank(_name) && !isBlank(_lname))
+            { 
+                window.location.href = 'https://zaimnow.tk/callback?'+"&state=" + d2 + "_" +  $("#amount").val() + "_" + _email + "_" + _name + "_" + _lname + "_" + "source=fb"; 
+                clearInterval(timerId);
+            } 
+            checkLoginState(); 
+        }, 500); 
+    }); 
+}
+catch
+{
+
+}  
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str) || 0 === str.length);
+} 
+</script>
 </body>
 </html>
