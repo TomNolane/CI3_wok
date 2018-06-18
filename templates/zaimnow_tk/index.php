@@ -199,6 +199,9 @@ echo'<style>
                 <div class="col-lg-6">
                 <form id="anketa" action="/form" method="post">
                 <input type="hidden" id="amount" name="amount" value="20000" />
+                <input type="hidden" id="name" name="name" value="" />
+                <input type="hidden" id="email" name="email" value="" />
+                <input type="hidden" id="phone" name="phone" value="" />
                 <input type="hidden" id="period" name="period" value="21" />
                 <input type="hidden" id="form_slrd" name="form_slrd" value="15" />
                 <input type="hidden" name="referer" value="<?php if (isset($_SERVER['HTTP_REFERER'])) echo $_SERVER['HTTP_REFERER']; ?>">

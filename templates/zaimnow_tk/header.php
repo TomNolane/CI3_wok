@@ -239,7 +239,7 @@ Messages
   border-radius: 10px 10px 10px 0;
   background: rgba(0, 0, 0, 0.3);
   margin: 8px 0;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.4;
   margin-left: 35px;
   position: relative;
@@ -265,8 +265,8 @@ Messages
   bottom: -15px;
   left: -35px;
   border-radius: 30px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -412,7 +412,21 @@ Message Box
 .message-box .message-submit:hover {
   background: #1D7745;
 }
-
+.close-btn {
+  float: right;
+  border-radius: 10px;
+  content: 'X';
+  padding: 6px 10px;
+  z-index: 1;
+  text-transform: uppercase;
+  background: #248A52;
+  outline: none !important;
+  font-size: 12px;
+  transition: background .2s ease;
+}
+.close-btn:hover {
+  background: #1D7745;
+}
 /*--------------------
 Custom Srollbar
 --------------------*/

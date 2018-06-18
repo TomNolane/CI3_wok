@@ -1,10 +1,11 @@
 <img src="/templates/zaimnow_tk/icon.png" alt="icon.png" id="help_button" class="response">
 <div class="chat" id="chat">
   <div class="chat-title">
-    <h1>Павел Козырев</h1>
-    <h2>менеджер</h2>
+    <h1>Робокоп Елена</h1>
+    <h2>онлайн-консультант</h2>
     <figure class="avatar">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" /></figure>
+      <img src="/templates/zaimnow_tk/assets/img/bot.jpg" /></figure>
+      <span class="close-btn" id="close">Закрыть</span>
   </div>
   <div class="messages">
     <div class="messages-content"></div>
@@ -16,3 +17,15 @@
 
 </div>
 <div class="bg"></div>
+<script>
+let is_start_bot = true;
+// 0 - standart, 1 - loans, 2 - question
+let behavior = 0;
+
+let name = ''
+let email = '';
+let phone = '';
+let sum = 0;
+let is_form_start = true;
+let is_q_start = true;
+</script>

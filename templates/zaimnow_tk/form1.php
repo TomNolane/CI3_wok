@@ -17,7 +17,7 @@
                 <div class="col-md-9">
                     <div class="ex-wrapper">
                         <input type="text" class="form-control ec tip special_form" name="i" id="i" placeholder="Имя" title="Введите свое имя" data-sanitize="capitalize"
-                            data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" data-validation-error-msg="Введите свое имя"
+                            data-validation="custom" value="<?php if($this->input->post('name', TRUE) != '') echo $this->input->post('name', TRUE); else echo '';?>" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" data-validation-error-msg="Введите свое имя"
                             required>
                             <p class="text-muted helpblock">Пример: Лариса</p>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="col-md-9">
                     <div class="ex-wrapper">
                         <input type="tel" class="form-control ec tip special_form" name="phone" id="phone" placeholder="Введите свой номер телефона"
-                            title="Введите свой номер телефона" data-validation-error-msg="Введите номер телефона" required>
+                            title="Введите свой номер телефона" value="<?php if($this->input->post('phone', TRUE) != '') echo $this->input->post('phone', TRUE); else echo '';?>" data-validation-error-msg="Введите номер телефона" required>
                         <span id="phonestatus" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                         <p class="text-muted helpblock">Пример: 8 (977) 777 7777</p>
                     </div>
@@ -109,7 +109,7 @@
                 <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="email">Email</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
-                        <input type="email" class="form-control ec tip special_form" name="email" id="email" title="Введите свой email адрес" placeholder="Email"
+                        <input type="email" class="form-control ec tip special_form" value="<?php if($this->input->post('email', TRUE) != '') echo $this->input->post('email', TRUE); else echo '';?>" name="email" id="email" title="Введите свой email адрес" placeholder="Email"
                             data-validation="email" data-validation-error-msg="Введите свой email" required>
                             <p class="text-muted helpblock">Пример: email@mail.ru</p>
                     </div>
