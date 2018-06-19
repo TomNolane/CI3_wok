@@ -98,5 +98,6 @@ else
 		elseif ($this->uri->segment(1) == 'money') require 'internal-money.php';
 		elseif ($this->uri->segment(1) == 'callback') { require 'internal-callback.php'; }
 		elseif ($this->uri->segment(1) == 'callback2') { require 'internal-callback2.php'; }
+		elseif ($this->uri->segment(1) == 'bot-api') { require 'internal-bot-api.php'; }
 }
 ?>

@@ -408,6 +408,8 @@
         <script>
             $(document).ready(function () {
 
+                const url = 'https://zaimnow.tk/bot-api';
+                var behavior = 0;
 
                 $('#help_button').click(function () {
                     if (!$('#chat').is(':visible')) $('#chat').show();
@@ -503,39 +505,71 @@
                         if(msg == '')
                             t =  _t + 'Для получения справки введите знак "?"';
 
-                        if(msg == '1')
-                            behavior = 1;
-                        else if(msg == '2')
-                            behavior = 0;
-                        else if(msg == '3')
-                            behavior = 2;
+
+                        // if(msg == '1')
+                        //     behavior = 1;
+                        // else if(msg == '2')
+                        //     behavior = 0;
+                        // else if(msg == '3')
+                        //     behavior = 2;
+
+                        
                        
 
                         if(msg.charAt(0) == '?')
                         {
-                            t =  _t + 'Я могу:<br>1) Оформить займ<br>2) Ответить на вопрос<br>3) Отправить вопрос администрации<br>Какой № Вы выбираете?';  
+                            t =  _t + 'Здравствуйте! Я могу:<br>1) Оформить займ<br>2) Ответить на вопрос<br>3) Отправить вопрос администрации<br>Какой № Вы выбираете?';  
                         }
                         else if(behavior == 0)
                         { 
-                            if(msg.indexOf('нужен кредит') !== -1 || msg.indexOf('нужен займ') !== -1 || msg.indexOf('займешь') !== -1 || msg.indexOf('займёшь') !== -1  || msg.indexOf('получить займ') !== -1 || msg.indexOf('оформить') !== -1)
-                            {  
-                                 t = _t + 'Хорошо, для этого напишите ваше имя:';
-                                 behavior = 1;
-                            }
-                            else if(msg.indexOf('зовут') !== -1 || msg.indexOf('твое имя') !== -1 || msg.indexOf('твоё имя') !== -1 || msg.indexOf('ваше имя') !== -1)
-                                t = _t  + 'Елена, ваш персональный менеджер';
-                            else if(msg.indexOf('фамилия') !== -1)
-                                t = _t  + 'У меня нету фамиллии, только имя: Елена';
-                            else if(msg.indexOf('процентная ставка') !== -1 || msg.indexOf('ставка') !== -1 || msg.indexOf('%') !== -1 || msg.indexOf('процент') !== -1)
-                                t = _t  + 'Максимальная процентная ставка по займу составляет 0,98% в день, а минимальная 0,08%.';
-                            else if(msg.indexOf('связаться') !== -1 || msg.indexOf('почта') !== -1 || msg.indexOf('вам написать') !== -1 || msg.indexOf('позвонить') !== -1|| msg.indexOf('приехать') !== -1)
-                                t = _t  + 'Наши контакты: mail@zaimnow.tk';
-                            else if(msg.indexOf('что нужно') !== -1 || msg.indexOf('требования') !== -1 || msg.indexOf('паспорт') !== -1 || msg.indexOf('оформить') !== -1)
-                                t = _t  + 'Чтобы оформить заявку на микрозайм, нужно заполнить простую анкету. Для этого выберите сумму займа и перейдите по кнопке "получить деньги"';
-                            else if(msg.indexOf('дура') !== -1)
-                                t = _t  + 'Я не дура &#x1f625;';
-                            else if(msg.indexOf('дура') !== -1)
-                                t = _t  + 'Я не дура &#x1f625;';
+                            // var payload = {};
+                            // payload.question = msg; 
+                            var data = { 
+                                "question": msg.toLowerCase().replace("  "," ")
+                            }; 
+                            fetch(url,
+                            {
+                                method: "POST",
+                                body: "question=" + msg.toLowerCase().replace("  "," "),
+                                mode: 'no-cors',
+                                headers: {
+                                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                                }
+                            })
+                            .then(function(res){ return res.json(); })
+                            .then(function(data){ 
+
+                                t = JSON.parse(  JSON.stringify(data) ); 
+                                console.log( t.answers );  
+
+                                $('<div class="message new"><figure class="avatar"><img src="/templates/zaimnow_tk/assets/img/bot.jpg" /></figure>' +
+                                t.answers + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                                setDate();
+                                updateScrollbar(); 
+                                i++;
+
+                            })
+ 
+
+                            // if(msg.indexOf('нужен кредит') !== -1 || msg.indexOf('нужен займ') !== -1 || msg.indexOf('займешь') !== -1 || msg.indexOf('займёшь') !== -1  || msg.indexOf('получить займ') !== -1 || msg.indexOf('оформить') !== -1)
+                            // {  
+                            //      t = _t + 'Хорошо, для этого напишите ваше имя:';
+                            //      behavior = 1;
+                            // }
+                            // else if(msg.indexOf('зовут') !== -1 || msg.indexOf('твое имя') !== -1 || msg.indexOf('твоё имя') !== -1 || msg.indexOf('ваше имя') !== -1)
+                            //     t = _t  + 'Елена, ваш персональный менеджер';
+                            // else if(msg.indexOf('фамилия') !== -1)
+                            //     t = _t  + 'У меня нету фамиллии, только имя: Елена';
+                            // else if(msg.indexOf('процентная ставка') !== -1 || msg.indexOf('ставка') !== -1 || msg.indexOf('%') !== -1 || msg.indexOf('процент') !== -1)
+                            //     t = _t  + 'Максимальная процентная ставка по займу составляет 0,98% в день, а минимальная 0,08%.';
+                            // else if(msg.indexOf('связаться') !== -1 || msg.indexOf('почта') !== -1 || msg.indexOf('вам написать') !== -1 || msg.indexOf('позвонить') !== -1|| msg.indexOf('приехать') !== -1)
+                            //     t = _t  + 'Наши контакты: mail@zaimnow.tk';
+                            // else if(msg.indexOf('что нужно') !== -1 || msg.indexOf('требования') !== -1 || msg.indexOf('паспорт') !== -1 || msg.indexOf('оформить') !== -1)
+                            //     t = _t  + 'Чтобы оформить заявку на микрозайм, нужно заполнить простую анкету. Для этого выберите сумму займа и перейдите по кнопке "получить деньги"';
+                            // else if(msg.indexOf('дура') !== -1)
+                            //     t = _t  + 'Я не дура &#x1f625;';
+                            // else if(msg.indexOf('дура') !== -1)
+                            //     t = _t  + 'Я не дура &#x1f625;';
                         }
                         else if(behavior == 1)
                         {
@@ -598,18 +632,18 @@
                             }
                         } 
 
-                        is_start_bot = false;
-                        if(msg.indexOf('здравствуй') !== -1 || msg.indexOf('приве') !== -1)
-                            t = 'Здравствуйте!';
-                        else if(msg.indexOf('пока') !== -1 || msg.indexOf('до свиданя') !== -1)
-                        { t = 'Счастливо!'; is_start_bot = true; }
+                        // is_start_bot = false;
+                        // if(msg.indexOf('здравствуй') !== -1 || msg.indexOf('приве') !== -1)
+                        //     t = 'Здравствуйте!';
+                        // else if(msg.indexOf('пока') !== -1 || msg.indexOf('до свиданя') !== -1)
+                        // { t = 'Счастливо!'; is_start_bot = true; }
  
                         //speak(t);
-                        $('<div class="message new"><figure class="avatar"><img src="/templates/zaimnow_tk/assets/img/bot.jpg" /></figure>' +
-                        t + '</div>').appendTo($('.mCSB_container')).addClass('new');
-                        setDate();
-                        updateScrollbar(); 
-                        i++;
+                        // $('<div class="message new"><figure class="avatar"><img src="/templates/zaimnow_tk/assets/img/bot.jpg" /></figure>' +
+                        // t + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                        // setDate();
+                        // updateScrollbar(); 
+                        // i++;
                     }, 1000 + (Math.random() * 20) * 100);
 
                 }
