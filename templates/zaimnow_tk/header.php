@@ -777,22 +777,21 @@ var _name, _lname, _email;
                 <h2 class="text-center">Заполните форму
                     и наш менеджер свяжется с вами</h2> 
                     <div class="form-group">
-                        <label for=""></label>
-                        <input type="text" class="form-control ec tip" name="feedback-name" title="Введите свое имя"
+                        <label for="feedback-name"></label>
+                        <input type="text" class="form-control ec tip" name="feedback-name" id="feedback-name" title="Введите свое имя"
                                 data-sanitize="capitalize" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\-\s]+$"
                                 data-validation-error-msg="Введите свое имя" id="feedback-name" placeholder="Введите ваше имя">
                     </div>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="feedback-phone" title="Тефелон" placeholder="Введите ваш телефон" value="79777777777" required>
+                        <input type="hidden" class="form-control" id="feedback-phone" name="feedback-phone" title="Тефелон" value="79777777777">
                     </div>
                     <div class="form-group">
-                        <label for="feedback-email"> <label for=""></label>
-                        </label>
+                        <label for="feedback-email"></label>
                         <input type="email" class="form-control" name="feedback-email" id="feedback-email" title="Email" placeholder="Введите ваш email" required> 
                     </div>
                     <div class="form-group">
                         <label for="feedback-comment"></label> 
-                        <textarea id="feedback-comment" rows="3" name="feedback-comment" title="Текст вашего сообщения" placeholder="Введите текст сообщения" required></textarea>
+                        <textarea id="feedback-comment" rows="3" name="feedback-comment" id="feedback-comment" title="Текст вашего сообщения" placeholder="Введите текст сообщения" required></textarea>
                         <button type="button" id="feedback-send" class="ex-main-btn">Отправить</button>
                     </div> 
             </div>

@@ -1,7 +1,7 @@
 <img src="/templates/zaimnow_tk/icon.png" alt="icon.png" id="help_button" class="response">
 <div class="chat" id="chat">
   <div class="chat-title">
-    <h1>Робокоп Елена</h1>
+    <h1>Елена</h1>
     <h2>онлайн-консультант</h2>
     <figure class="avatar">
       <img src="/templates/zaimnow_tk/assets/img/bot.jpg" /></figure>
@@ -18,14 +18,16 @@
 </div>
 <div class="bg"></div>
 <script>
-let is_start_bot = true;
+var is_start_bot = true;
 // 0 - standart, 1 - loans, 2 - question
-let behavior = 0;
+var behavior = 0;
 
-let name = ''
-let email = '';
-let phone = '';
-let sum = 0;
-let is_form_start = true;
-let is_q_start = true;
+var name = ''
+var email = '';
+var phone = '';
+var sum = 0;
+var is_form_start = true;
+var is_q_start = true;
+
+var question = '';
 </script>
