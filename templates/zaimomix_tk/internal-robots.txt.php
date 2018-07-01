@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /addnew/
 Disallow: /validate/phone/
-sitemap: http://zaimomix.tk/sitemap_zaimomix.xml
-Host: http://zaimomix.tk
+sitemap: https://zaimnow.ru/sitemap_zaimnow.xml
+Host: https://zaimnow.ru

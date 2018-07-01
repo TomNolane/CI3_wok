@@ -1,46 +1,29 @@
 <section class="ex-main-form">
     <div class="row">
         <div class="col-lg-8 offset-lg-1">
-            <div class="row">
-                <div class="col-md-9 offset-md-3">
-                    <div class="ex-calc-block">
-                        <div class="ex-wrapper">
-                            <div class="ex-slider-block ">
-                                <span>Сумма займа</span>
-                                <p class="ex-slider-val"></p>
-                            </div>
-                            <div class="ex-range-slider ">
-                                <input id="rangeSlider" name="rangeSlider" />
-                                <span class="ex-small-cost ex-left">1 000 </span>
-                                <span class="ex-small-cost ex-right">100 000 </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group has-feedback row hidden">
+            <div class="form-group row hidden">
                 <label class="col-md-3  d-flex align-items-center justify-content-md-end" for="f">Фамилия</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
                         <input type="text" class="form-control ec tip special_form" name="f" id="f" placeholder="Фамилия" title="Введите свою фамилию"
-                            data-sanitize="capitalize" data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" value="Иванова" data-validation-error-msg="Введите свою фамилию"
+                            data-sanitize="capitalize" data-validation="custom" value="Иванова" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" data-validation-error-msg="Введите свою фамилию"
                             required>
-                            <p class="text-muted helpblock">Пример: Иванова</p>
+                        <p class="text-muted helpblock">Пример: Иванова</p>
                     </div>
                 </div>
             </div>
-            <div class="form-group has-feedback row">
+            <div class="form-group row">
                 <label class="col-md-3 d-flex align-items-center justify-content-md-end" for="i">Имя</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
                         <input type="text" class="form-control ec tip special_form" name="i" id="i" placeholder="Имя" title="Введите свое имя" data-sanitize="capitalize"
-                            data-validation="custom" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" data-validation-error-msg="Введите свое имя"
+                            data-validation="custom" value="<?php if($this->input->post('name', TRUE) != '') echo $this->input->post('name', TRUE); else echo '';?>" data-validation-regexp="^[А-Яа-яЁё\-\s]+$" data-validation-error-msg="Введите свое имя"
                             required>
                             <p class="text-muted helpblock">Пример: Лариса</p>
                     </div>
                 </div>
             </div>
-            <div class="form-group has-feedback row hidden">
+            <div class="form-group row hidden">
                 <label class="col-md-3 d-flex align-items-center justify-content-md-end" for="o">Отчество</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
@@ -92,15 +75,15 @@
                             <option>выбери</option>
                             <option value="0">Год</option>
                             <?php
-				for($i=date('Y', strtotime('-80 years', time()));$i<=date('Y', strtotime('-18 years', time()));$i++)
-				echo '<option value="'.$i.'">'.$i.'</option>';
-				?>
+                                for($i=date('Y', strtotime('-80 years', time()));$i<=date('Y', strtotime('-18 years', time()));$i++)
+                                echo '<option value="'.$i.'">'.$i.'</option>';
+                            ?>
                         </select>
                     </div>
                 </div>
             </div>
             <!-- Скрываем старую форму даты рождения -->
-            <div class="form-group has-feedback row hidden">
+            <div class="form-group row hidden">
                 <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="birthdate">Дата рождения</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
@@ -111,32 +94,32 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group has-feedback row">
+            <div class="form-group row">
                 <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="phone" id="spec_form2">Телефон</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
                         <input type="tel" class="form-control ec tip special_form" name="phone" id="phone" placeholder="Введите свой номер телефона"
-                            title="Введите свой номер телефона" data-validation-error-msg="Введите номер телефона" required>
+                            title="Введите свой номер телефона" value="<?php if($this->input->post('phone', TRUE) != '') echo $this->input->post('phone', TRUE); else echo '';?>" data-validation-error-msg="Введите номер телефона" required>
                         <span id="phonestatus" class="glyphicon form-control-feedback" aria-hidden="true"></span>
                         <p class="text-muted helpblock">Пример: 8 (977) 777 7777</p>
                     </div>
                 </div>
             </div>
-            <div class="form-group has-feedback row">
+            <div class="form-group row">
                 <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="email">Email</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper">
-                        <input type="email" class="form-control ec tip special_form" name="email" id="email" title="Введите свой email адрес" placeholder="Email"
+                        <input type="email" class="form-control ec tip special_form" value="<?php if($this->input->post('email', TRUE) != '') echo $this->input->post('email', TRUE); else echo '';?>" name="email" id="email" title="Введите свой email адрес" placeholder="Email"
                             data-validation="email" data-validation-error-msg="Введите свой email" required>
                             <p class="text-muted helpblock">Пример: email@mail.ru</p>
                     </div>
                 </div>
             </div>
-            <div class="form-group has-feedback row hidden">
-                <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="delays_type">Кредитная история</label>
+            <div class="form-group row hidden">
+                <label class="control-label col-md-3 d-flex align-items-center justify-content-md-end" for="credit">Кредитная история</label>
                 <div class="col-md-9">
                     <div class="ex-wrapper ex-arrow">
-                        <select size="1" class="form-control ec special_form99" name="delays_type" id="delays_type">
+                        <select class="form-control ec special_form99" name="delays_type" id="delays_type">
                             <option selected value="never">Никогда не брал(а) кредитов</option>
                             <option value="credit_closed_no_delay">Кредиты закрыты, просрочек не было</option>
                             <option value="credit_open_no_delay">Кредиты есть, просрочек нет</option>
@@ -160,11 +143,11 @@
                     </label>
                 </div>
             </div>
-            <div class="form-group has-feedback row">
+            <div class="form-group row">
                 <div class="col-md-9 offset-md-3">
                     <div class="row justify-content-center">
-                        <div class="col-md-10">
-                            <button type="button" id="submitOne" class="nav nav-tabs ex-orange-btn text-center"> Получить деньги </button>
+                        <div class="col-md-6">
+                            <button type="button" id="submitOne" class="nav nav-tabs ex-main-btn text-center"> Далее </button>
                         </div>
                     </div>
                 </div>

@@ -22,8 +22,8 @@ var isWebvisor = new RegExp('^https?:\/\/([^/]+metrika.yandex\.(ru|ua|com|com\.t
 function error(msg, elem) {
 	var title = 'Ошибка';
 	if ($('#message').length) $('#message').remove();
-	$('body').append('<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="messageLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header">' +
-		'<h4 class="modal-title" id="messageLabel">' + title + '</h4><button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>' +
+	$('body').append('<div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="messageLabel"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+		'<h4 class="modal-title" id="messageLabel">' + title + '</h4></div>' +
         '<div class="modal-body">' + msg + '</div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">OK</button></div></div></div></div>');
         $('html, body').animate({
             scrollTop: elem.offset().top - 160
@@ -284,7 +284,7 @@ $("#email").suggestions({
     $('html, body').animate({
         scrollTop: $(this).offset().top - 100
     }, 1000);
-  });
+});
   $('input').on('validation', function(evt, valid) {
     if(valid){  
         $(this).parent().parent().prev().removeClass('label_er').addClass('label_true');
@@ -357,7 +357,6 @@ $("#email").suggestions({
         }
     });
   });
-    
     var lang=0;
   
   $('#f, #i, #o, #passport_who, #birthplace, #city, #reg_city, #street, #reg_street, #work_occupation, #work_experience, #work_region, #work_city, #work_street, #feedback-name, #feedback-comment').on('keyup keypress', function(e) {
@@ -468,6 +467,15 @@ $("#email").suggestions({
         })
     ); 
 	$('#submitOne').click(function(){
+        if (validate()) {
+            $('input[name="step"]').val('3');
+			$('#form-modal').show();
+			send_form(true, '/lk');
+            markTarget('form-step-3');
+            window.location = '/lk';
+		}
+		showBzzz = false;
+		setcookies();
 		// if (validate1()) {
 		// 	send_form();
 		// 	$('.ex-step-counter').removeClass('ex-step-active');
@@ -475,6 +483,11 @@ $("#email").suggestions({
         //     $('#firstStep').removeClass('in active');
         //     $('#secondStep').addClass('in active');
         //     $('.spec_footer4').css('visibility','hidden');
+        //     if($('.ex-calc-zaim').hasClass('ex-calc-zaim-open'))
+        //     {
+        //         $('.ex-calc-zaim').click();
+        //     }
+        //     //traffic(window.location.hostname,1);
         //     $('.spec_footer5').css('visibility','hidden'); 
 		// 	$('html, body').animate({scrollTop:$('#form-steps').offset().top}, 1000);
 		// 	markTarget('form-step-1');
@@ -483,16 +496,7 @@ $("#email").suggestions({
 		// $('.reg_same').change();
 		// setcookies();
         // setcookie('i', $('#i').val());
-        // $('select[name="reg_type"]').change();
-        if (validate()) {
-            $('input[name="step"]').val('3'); 
-			$('#form-modal').show();
-			send_form(true, '/lk');
-            markTarget('form-step-3');
-            window.location = '/lk';
-		}
-		showBzzz = false;
-		setcookies();
+		// $('select[name="reg_type"]').change();
        
 	});
 	$('#submitTwo').click(function(){
@@ -512,7 +516,7 @@ $("#email").suggestions({
 	});
 	$('#form-send').click(function(){
 		if (validate()) {
-            $('input[name="step"]').val('3'); 
+            $('input[name="step"]').val('3');
 			$('#form-modal').show();
 			send_form(true, '/lk');
             markTarget('form-step-3');

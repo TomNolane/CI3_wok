@@ -1,15 +1,7 @@
 <?php require 'header.php';?>
 <section class="ex-faq">
-    <div class="ex-page-title">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <h1>Часто задаваемые вопросы</h1>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
+        <h1>Часто задаваемые вопросы</h1>
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="ex-faq-content">
@@ -48,7 +40,7 @@
                                     </div>
                                     <div id="collapse2" class="panel-collapse collapse">
                                         <div class="card-body">
-                                            <p>Лимит займа для новых клиентов составляет от 1000 до 30 000 рублей.
+                                            <p>Лимит займа для новых клиентов составляет от 1000 до 100 000 рублей.
                                                 Если вы погасили его вовремя, ваш лимит возрастает.</p>
                                         </div>
                                     </div>
@@ -220,11 +212,8 @@
                         </div>
                     </div>
                     <div class="ex-for-buttons">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input  class="ex-ask-question ex-main-btn ex-question-btn text-center" value="задать вопрос"/> 
-                            </div>
-                            <div class="col-md-8">
+                        <div class="row justify-content-center">
+                            <div class="col-md-5">
                                 <a href="/form"><button class="ex-main-btn">Получить деньги</button></a>
                             </div>
                         </div>
