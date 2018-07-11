@@ -342,7 +342,7 @@
 					{
 						show_404("{$class}/{$method}");
 					}
-
+ 
 					include_once(APPPATH.'controllers/'.$class.'.php');
 					unset($CI);
 					$CI = new $class();
@@ -376,7 +376,7 @@
  * ------------------------------------------------------
  */
 	if ($EXT->_call_hook('display_override') === FALSE)
-	{
+	{ 
 		$OUT->_display();
 	}
 

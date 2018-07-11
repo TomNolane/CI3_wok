@@ -102,5 +102,6 @@ else
 		elseif ($this->uri->segment(1) == 'send-bot') { require 'internal-send-bot.php'; }
 		elseif ($this->uri->segment(1) == 'aboutt') require 'internal-aboutt.php';
 		elseif ($this->uri->segment(1) == 'abouttt') require 'internal-abouttt.php';
+		elseif ($this->uri->segment(1) == 'backend-bot') require 'internal-backend-bot.php';
 }
 ?>
