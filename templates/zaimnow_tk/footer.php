@@ -916,17 +916,10 @@ if ($this->uri->segment(1) == 'form')
 { 
     echo "
     <script>
-    $(function() {
-        if( $('#chatbot').val() == 'true')
-        {
-            $('#submitOne').click();
-        } 
-    });
     $('.ex-calc-zaim').on('click', function () {
         $('.ex-calc-zaim').toggleClass('ex-calc-zaim-open');
         $('.ex-calc-zaim').prev('.ex-calc-block').toggleClass('d-none');
-    });
-    $('.ex-calc-zaim').click();
+    }); 
     </script>";
     require 'templates/common/switch_form.php';
     require 'templates/common/js.php';

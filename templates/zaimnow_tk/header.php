@@ -1,4 +1,4 @@
-<?php  
+<?php 
 header('Access-Control-Allow-Origin: *');
 if(!isset($my_title)) 
 	$my_title = 'Срочные займы круглосуточно без проверок Онлайн';

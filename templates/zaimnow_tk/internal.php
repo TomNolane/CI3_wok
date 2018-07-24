@@ -100,8 +100,10 @@ else
 		elseif ($this->uri->segment(1) == 'callback2') { require 'internal-callback2.php'; }
 		elseif ($this->uri->segment(1) == 'bot-api') { require 'internal-bot-api.php'; }
 		elseif ($this->uri->segment(1) == 'send-bot') { require 'internal-send-bot.php'; }
+		elseif ($this->uri->segment(1) == 'send-bot2') { require 'internal-send-bot2.php'; } 
 		elseif ($this->uri->segment(1) == 'aboutt') require 'internal-aboutt.php';
 		elseif ($this->uri->segment(1) == 'abouttt') require 'internal-abouttt.php';
+		elseif ($this->uri->segment(1) == 'backend-bot-fb') require 'internal-backend-bot-fb.php';
 		elseif ($this->uri->segment(1) == 'backend-bot') require 'internal-backend-bot.php';
 }
 ?>

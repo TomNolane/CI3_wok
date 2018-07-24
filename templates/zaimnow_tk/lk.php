@@ -136,4 +136,11 @@ $arr = array(
         </div>
     </div>
 </div> 
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?156"></script>
+
+<!-- VK Widget -->
+<div id="vk_community_messages"></div>
+<script type="text/javascript">
+VK.Widgets.CommunityMessages("vk_community_messages", 168559863, {expanded: "1",tooltipButtonText: "Есть вопрос?"});
+</script>
 <?php require 'footer.php'; ?>
