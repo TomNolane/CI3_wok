@@ -188,7 +188,7 @@ class BotMan
      */
     public function getMessages()
     {
-        return $this->getDriver()->getMessages();
+        return $this->getDriver()->getMessages(); 
     }
 
     /**
@@ -525,7 +525,7 @@ class BotMan
 
         $recipients = is_array($recipients) ? $recipients : [$recipients];
 
-        foreach ($recipients as $recipient) {
+        foreach ($recipients as $recipient) { 
             $this->message = new IncomingMessage('', $recipient, '');
             $response = $this->reply($message, $additionalParameters);
         }
@@ -693,8 +693,17 @@ class BotMan
      */
     public function getMessage()
     {
+        $y = $this->message->getText();
         return $this->message;
-    }
+    } 
+
+    /**
+     * @return request text
+     */
+    public function getText()
+    { 
+        return $this->message->getText();
+    } 
 
     /**
      * @return OutgoingMessage|Question

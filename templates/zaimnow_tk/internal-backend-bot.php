@@ -1,97 +1,47 @@
-<?php
-require_once './vendor/autoload.php';
+<?php  
+require_once 'vendor/autoload.php';
 
-const VK_TOKEN = 'c29ad8d89a62505e4ea24ab7f7c5b27ee8f713f56a86818282d78e26b8b8caae00688a7772ca8d8dd90f1';
+use BotMan\BotMan\BotMan;
+use BotMan\BotMan\BotManFactory;
+use BotMan\BotMan\Drivers\DriverManager;
+use BotMan\BotMan\Cache\CodeIgniterCache;
 
-function myLog($str) {
-    file_put_contents("php://stdout", "$str\n");
-}
+$config = [
+    'facebook' => [
+      'token' => 'EAAZAT6dcgYDQBAC6x7Xtn234324234sOAliTEztGPR45cOxx3rZAMZBc9Mb9UhB62gBSG2kXTo7ldyk2fTquadMJQVY8nqKxiOakLXLUZBCSavncCljoe5IAZDZD',
+      'app_secret' => 'b52517ee8234234d71b6afa76dca657',
+      'verification'=>'my_e42342345_token',
+    ],
+    "vkontakte" => [
+       "token" => "9af81c610faf0ea3345435e7a1736d17b0b2b53b164ff3b18cc1b9d4e422fd15db046594139078",
+       "verify" => 'ee444d5'
+    ],
+    'telegram' => [
+        'token' => '60153454353R72siiyfbebv7wgqCn8tc'
+    ]
+];
 
-const COLOR_NEGATIVE = 'negative';
-const COLOR_POSITIVE = 'positive';
-const COLOR_DEFAULT = 'default';
-const COLOR_PRIMARY = 'primary';
-const CMD_ID = 'ID';
-const CMD_NEXT = 'NEXT';
-const CMD_TYPING = 'TYPING';
+DriverManager::loadDriver(\BotMan\Drivers\Vkontakte\VkontakteDriver::class);
+DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
+DriverManager::loadDriver(\BotMan\Drivers\Telegram\TelegramDriver::class); 
 
-use VK\Client\Enums\VKLanguage;
-use VK\Client\VKApiClient;
+$this->load->driver('cache');
 
-// For verify server
-const NEED_VERIFY = false; // after verify, set FALSE or delete lines 22-27
-if (NEED_VERIFY)
-{
-    echo '54157d15'; // like 54257d15
-    die();
-}
+$botman = BotManFactory::create($config, new CodeIgniterCache($this->cache->file));
 
-function getBtn($label, $color, $payload = '') {
-    return [
-        'action' => [
-            'type' => 'text',
-            "payload" => json_encode($payload, JSON_UNESCAPED_UNICODE),
-            'label' => $label
-        ],
-        'color' => $color
-    ];
-}
-$json = file_get_contents('php://input');
-//myLog($json);
-$data = json_decode($json, true);
-$type = $data['type'] ?? '';
-$vk = new VKApiClient('5.80', VKLanguage::RUSSIAN);
-if ($type === 'message_new') {
-    $message = $data['object'] ?? [];
-    $userId = $message['from_id'] ?? 0; //this change
-    $body = $message['body'] ?? '';
-    $payload = $message['payload'] ?? '';
-    if ($payload) {
-        $payload = json_decode($payload, true);
-    }
-    //myLog($userId);
-   myLog("MSG: ".$body." PAYLOAD:".$payload);
-    $kbd = [
-        'one_time' => false,
-        'buttons' => [
-            [getBtn("Покажи мой ID", COLOR_DEFAULT, CMD_TYPING)],
-            [getBtn("Далее", COLOR_PRIMARY, CMD_NEXT)],
-        ]
-    ];
-    $msg = "Привет я бот!";
-    if ($payload === CMD_ID) {
-        $msg = "Ваш id ".$userId;
-    }
-    if ($payload === CMD_NEXT) {
-        $kbd = [
-            'one_time' => false,
-            'buttons' => [
-                [getBtn("Пошли тайпинг", COLOR_POSITIVE, CMD_TYPING)],
-                [getBtn("Назад", COLOR_NEGATIVE)],
-            ]
-        ];
-    }
-    if ($payload === CMD_TYPING) {
-        try {
-            $res = $vk->messages()->setActivity(VK_TOKEN, [
-                'peer_id' => $userId,
-                'type' => 'typing'
-            ]);
-            $msg = "Ваш id ".$userId;
-        } catch (\Exception $e) {
-            myLog( $e->getCode().' '.$e->getMessage() );
-        }
-    }
-    try {
-        if ($msg !== null) {
-            $response = $vk->messages()->send(VK_TOKEN, [
-                'peer_id' => $userId,
-                'message' => $msg,
-                'keyboard' => json_encode($kbd, JSON_UNESCAPED_UNICODE)
-            ]);
-        }
-    } catch (\Exception $e) {
-        myLog( $e->getCode().' '.$e->getMessage() );
-    }
-}
-echo  "OK";
+$botman->hears('.*([0-9а-яА-Я])+.*', function (BotMan $bot) { 
+    $rr = (array)  ( $bot->getMessage()->getPayload() );
+    $rrr = current($rr)['text'];
+
+
+    if($rrr == 'привет')
+        $bot->reply('Прпрпрпр.');
+    else 
+        $bot->reply('ну да..');
+});
+
+$botman->fallback(function($bot) {
+    $bot->reply('Чё ??? ...');
+});
+
+$botman->listen();

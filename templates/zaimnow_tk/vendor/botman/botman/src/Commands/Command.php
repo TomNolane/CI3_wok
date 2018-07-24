@@ -44,7 +44,9 @@ class Command
      */
     public function __construct($pattern, $callback, $recipients = null, $driver = null)
     {
+        // $this->pattern = iconv('utf-8', 'windows-1251', $pattern); 
         $this->pattern = $pattern;
+        //var_dump($pattern);
         $this->callback = $callback;
         $this->driver = $driver;
         $this->recipients = $recipients;

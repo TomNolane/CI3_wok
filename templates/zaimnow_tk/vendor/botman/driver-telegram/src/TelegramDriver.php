@@ -60,7 +60,7 @@ class TelegramDriver extends HttpDriver
         $parameters = [
             'chat_id' => $matchingMessage->getRecipient(),
             'user_id' => $matchingMessage->getSender(),
-        ];
+        ]; 
 
         $response = $this->http->post($this->buildApiUrl('getChatMember'), [], $parameters);
 

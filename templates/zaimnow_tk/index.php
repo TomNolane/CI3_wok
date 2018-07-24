@@ -1,4 +1,5 @@
-<?php require 'header.php';
+<?php
+require 'header.php';
 $client_id = '6488317'; // ID приложения
 $client_secret = '5fqVYjRCpEenlHbZz9qM'; // Защищённый ключ
 $redirect_uri = 'https://zaimnow.tk/callback'; // Адрес сайта

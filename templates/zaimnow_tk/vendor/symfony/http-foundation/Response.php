@@ -478,8 +478,7 @@ class Response
      */
     public function setCharset(string $charset)
     {
-        $this->charset = $charset;
-
+        $this->charset = $charset; 
         return $this;
     }
 
@@ -489,7 +488,7 @@ class Response
      * @final
      */
     public function getCharset(): ?string
-    {
+    { 
         return $this->charset;
     }
 

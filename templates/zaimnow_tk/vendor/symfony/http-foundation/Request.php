@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\HttpFoundation;
+namespace Symfony\Component\HttpFoundation; 
 
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
@@ -315,7 +315,7 @@ class Request
             'HTTP_USER_AGENT' => 'Symfony',
             'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'HTTP_ACCEPT_LANGUAGE' => 'en-us,en;q=0.5',
-            'HTTP_ACCEPT_CHARSET' => 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
+            'HTTP_ACCEPT_CHARSET' => 'utf-8;q=0.7,*;q=0.7',
             'REMOTE_ADDR' => '127.0.0.1',
             'SCRIPT_NAME' => '',
             'SCRIPT_FILENAME' => '',
@@ -1499,6 +1499,8 @@ class Request
                 return $this->content;
             }
 
+
+           
             // Content passed in parameter (test)
             if (is_string($this->content)) {
                 $resource = fopen('php://temp', 'r+');
@@ -1509,22 +1511,33 @@ class Request
             }
 
             $this->content = false;
-
+           
             return fopen('php://input', 'rb');
         }
 
         if ($currentContentIsResource) {
-            rewind($this->content);
+            rewind($this->content); 
 
             return stream_get_contents($this->content);
         }
 
         if (null === $this->content || false === $this->content) {
-            $this->content = file_get_contents('php://input');
+
+            $this->content = file_get_contents('php://input'); // iconv('utf-8', 'windows-1251', ... );
+           // $this->content =  iconv('UTF-8', 'windows-1251', $this->content); 
         }
 
         return $this->content;
     }
+
+    private function normaliser($str) {  
+
+        setlocale(LC_CTYPE, 'ru_RU');
+        $str = iconv('UTF-8', 'windows-1251', $str);
+        // $str = mb_convert_encoding($str, 'windows-1251', 'UTF-8');
+        return $str;
+    }
+
 
     /**
      * Gets the Etags.
@@ -1629,7 +1642,7 @@ class Request
         if (null !== $this->charsets) {
             return $this->charsets;
         }
-
+         
         return $this->charsets = array_keys(AcceptHeader::fromString($this->headers->get('Accept-Charset'))->all());
     }
 
@@ -1640,9 +1653,9 @@ class Request
      */
     public function getEncodings()
     {
-        if (null !== $this->encodings) {
+        if (null !== $this->encodings) { 
             return $this->encodings;
-        }
+        } 
 
         return $this->encodings = array_keys(AcceptHeader::fromString($this->headers->get('Accept-Encoding'))->all());
     }

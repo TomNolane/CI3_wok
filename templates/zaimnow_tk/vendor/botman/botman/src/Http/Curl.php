@@ -39,9 +39,8 @@ class Curl implements HttpInterface
      * @return Response
      */
     public function get($url, array $urlParameters = [], array $headers = [], $asJSON = false)
-    {
-        $request = $this->prepareRequest($url, $urlParameters, $headers);
-
+    { 
+        $request = $this->prepareRequest($url, $urlParameters, $headers); 
         return $this->executeRequest($request);
     }
 
@@ -55,13 +54,17 @@ class Curl implements HttpInterface
      */
     protected static function prepareRequest($url, $parameters = [], $headers = [])
     {
-        $request = curl_init();
+        $request = curl_init(); 
 
         if ($query = http_build_query($parameters)) {
             $url .= '?'.$query;
         }
 
         curl_setopt($request, CURLOPT_URL, $url);
+        // curl_setopt($request, CURLOPT_PROXY, "socks5://$proxy");
+        // curl_setopt($request, CURLOPT_PROXY, 'vamtlgrm.drproxy.pro:1011');
+        // curl_setopt($request, CURLOPT_PROXYUSERPWD, 'd56b62206b7f72baac5e39335bf6faad');
+
         curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($request, CURLINFO_HEADER_OUT, true);
