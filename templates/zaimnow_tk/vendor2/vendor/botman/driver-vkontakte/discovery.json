@@ -1,8 +1,0 @@
-{
-    "botman/driver-config": [
-        "stubs/vkontakte.php"
-    ],
-    "botman/driver": [
-        "BotMan\\Drivers\\Vkontakte\\VkontakteDriver"
-    ]
-}

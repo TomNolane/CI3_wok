@@ -10,6 +10,7 @@ namespace BotMan\Drivers\Vkontakte;
 
 use Illuminate\Support\Collection;
 use BotMan\BotMan\Drivers\HttpDriver;
+use BotMan\BotMan\Users\User;
 use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\BotMan\Messages\Outgoing\Question;
@@ -44,6 +45,8 @@ class VkontakteDriver extends HttpDriver
         $this->myData = (array) json_decode( $request->getContent() , true); // $request->request->all();
         
         $this->event = Collection::make($this->payload->get('object'));
+		//$rr = current(  (array)$this->event   ); 
+		//var_dump(  $this->array_get( current(  (array)$this->event), 'peer_id', null)    );
         $this->config = Collection::make($this->config->get('vkontakte')); 
     }
 
@@ -57,7 +60,7 @@ class VkontakteDriver extends HttpDriver
     {  
         $udata = [];
         $resp = $this->sendRequest('users.get', [
-            'user_ids' => $this->event->peer_id,
+            'user_ids' => $this->array_get( current(  (array)$this->event), 'peer_id', null),
             'fields' => 'screen_name,sex,bdate,city,country,contacts',
         ]);
 
@@ -67,7 +70,7 @@ class VkontakteDriver extends HttpDriver
         $profileData = $this->array_get($resp_data, 'response.0');
 
         $id = $this->array_get($profileData, 'id', null);
-        $firstName = $this->array_get($profileData, 'name', null);
+        $firstName = $this->array_get($profileData, 'first_name', null);
         $lastName = $this->array_get($profileData, 'last_name', null);
         $uname = $this->array_get($profileData, 'screen_name', null);
 
@@ -105,8 +108,9 @@ class VkontakteDriver extends HttpDriver
         if ($home_phone != null) {
             $udata['home_phone'] = $home_phone;
         }
- 
-        return new User($matchingMessage->getSender(), $firstName, $lastName, $uname, $udata);
+
+        //$id = null, $first_name = null, $last_name = null, $username = null, $user_info = []
+        return new User($id, $firstName, $lastName, $uname, $udata);
     }
 
 

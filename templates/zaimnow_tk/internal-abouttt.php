@@ -43,6 +43,7 @@ list(, $char_6) = unpack('N', mb_convert_encoding("6", 'UCS-4BE', 'UTF-8'));
 list(, $char_7) = unpack('N', mb_convert_encoding("7", 'UCS-4BE', 'UTF-8'));
 list(, $char_8) = unpack('N', mb_convert_encoding("8", 'UCS-4BE', 'UTF-8'));
 list(, $char_9) = unpack('N', mb_convert_encoding("9", 'UCS-4BE', 'UTF-8'));
+list(, $char_qest) = unpack('N', mb_convert_encoding("?", 'UCS-4BE', 'UTF-8'));
  
 $array = array(
     $char_a => "01",
@@ -87,14 +88,15 @@ $array = array(
     $char_6 => "40",
     $char_7 => "41",
     $char_8 => "42",
-    $char_9 => "43"
+    $char_9 => "43",
+    $char_qest => "77"
 );
 
 
 //ERROR
-л
+
 //$s = array("мне нужно займ","мне нужен займ","мне нужен заим","жене нужно займ","хотел бы найти займ","загрузить документы","хочу найти займ");
-$query = $this->db->select('id,question')->get('bot_feedback');
+$query = $this->db->select('id,question')->get('bot_feedback2');
 $s = $query->result();
 $s2 = array("привет");
 
@@ -114,11 +116,11 @@ $f2 = GetIntLenght($s2,$array);
 /* FOR GetIntLenght to All question from DB and UPDATE */
 
 $this->db->select('id,question');
-$query = $this->db->get('bot_feedback');
+$query = $this->db->get('bot_feedback2');
 $ds = [];
 foreach ($query->result() as $row)
     array_push($ds,['id'=>$row->id,'code' => implode("",GetIntLenght([$row->question],$array))]); 
-$this->db->update_batch('bot_feedback', $ds, 'id');
+$this->db->update_batch('bot_feedback2', $ds, 'id');
 echo 'Done'; 
 
     // $f3 = CompareWords($f,$f2);  
@@ -141,7 +143,7 @@ echo 'Done';
     // echo '</pre>';
     // return;
 
-    // $query = $this->db->select('id,answers')->where('id', current($f4)['id'])->get('bot_feedback');
+    // $query = $this->db->select('id,answers')->where('id', current($f4)['id'])->get('bot_feedback2');
     // $s = $query->result();
 
     // echo $s[0]->answers;

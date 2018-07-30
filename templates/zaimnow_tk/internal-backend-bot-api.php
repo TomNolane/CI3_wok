@@ -97,7 +97,7 @@ try {
     //$s = array("мне нужно займ","мне нужен займ","мне нужен заим","жене нужно займ","хотел бы найти займ","загрузить документы","хочу найти займ");
     $query = $this->db->select('id,code')->get('bot_feedback');
     $s = $query->result();
-    $s2 = array($d);
+    $s2 = array(strtolower($d));
 
     $f = [];
     foreach($s as $ss)
@@ -117,10 +117,10 @@ try {
 
     uasort($f4, 'cmp_function_desc');
 
-    
-    if(current($f4)['%'] < '50')
+    $procent = 0;
+    if(current($f4)['%'] < '70')
     {
-        $temp2 = "Я вас не понял. Для получения справки введите знак '?'";
+        $temp2 = "На данный момент мы не готовы овтетить на этот вопрос, но не переживайте, он уже отправлен нашему администратору, который наверняка сможет дать ответ.";
     }
     else
     {
@@ -133,15 +133,17 @@ try {
         $temp2 = str_replace("<br>","",$temp2);
     
         if(!empty($temp2)) $d = $temp2;
-        else $temp2 = "Я вас не понял. Для получения справки введите знак '?'";
+        else $temp2 = "";
     } 
 
-    $data = [
-        'answer' => $d,
-        'question' => $temp2,
-        'source' => $source
-    ];
-    post_request('https://zaimnow.tk/send-bot2',$data); 
+    $procent = current($f4)['%'];
+//     $data = [
+//         'answer' => $temp2,
+//         'question' => $d,
+//         'source' =>  $source,
+//         'procent' => $procent
+//     ];
+//    post_request('https://zaimnow.tk/send-bot2',$data); 
 
     // $this->db->select('*');
     // $this->db->from('bot_feedback');
